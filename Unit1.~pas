@@ -67,7 +67,7 @@ begin
         begin
           AssignFile(FileNameManipulation,SaveDialog1.FileName + '.txt');
             if(FileExists(SaveDialog1.FileName))Then
-                append(FileNameManipulation)
+                Append(FileNameManipulation)
             else
                 Rewrite(FileNameManipulation);
 
@@ -79,7 +79,10 @@ begin
                 closeFile(FileNameManipulation);
                 ShowMessage('Arquivo Salvo Com Sucesso');
                 Button2.Enabled:=false;
-    end;
+    end
+      else
+        ShowMessage('Informe Um Nome Para o Arquivo');
+     
 
 end;
 

@@ -1,6 +1,6 @@
 object FramePrincipal: TFramePrincipal
-  Left = 354
-  Top = 147
+  Left = 794
+  Top = 163
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Editor de Texto'
