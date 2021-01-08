@@ -65,8 +65,12 @@ begin
     If(SaveDialog1.Execute)Then
       If(Trim(SaveDialog1.FileName) <> '') Then
         begin
-            AssignFile(FileNameManipulation,SaveDialog1.FileName + '.txt');
-            Rewrite(FileNameManipulation);
+            if(FileExists(SaveDialog1.FileName))then
+              AssignFile(FileNameManipulation, savedialog1.filename)
+             else
+              AssignFile(FileNameManipulation, savedialog1.filename + '.txt');
+
+              Rewrite(FileNameManipulation);
 
                 while not(I = Memo1.Lines.Count)do
                   begin
@@ -77,9 +81,11 @@ begin
                 closeFile(FileNameManipulation);
                 ShowMessage('Arquivo Salvo Com Sucesso');
                 Button2.Enabled:=false;
+                Memo1.Clear;
+                Edit1.Text:='Nenhum Arquivo Selecionado' ;
 
            end;//end if
-end;
+      end;
 
 
 

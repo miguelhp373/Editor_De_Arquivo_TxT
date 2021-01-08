@@ -65,25 +65,20 @@ begin
     If(SaveDialog1.Execute)Then
       If(Trim(SaveDialog1.FileName) <> '') Then
         begin
-          AssignFile(FileNameManipulation,SaveDialog1.FileName + '.txt');
-            if(FileExists(SaveDialog1.FileName))Then
-                Append(FileNameManipulation)
-            else
-                Rewrite(FileNameManipulation);
+            AssignFile(FileNameManipulation,SaveDialog1.FileName + '.txt');
+            Rewrite(FileNameManipulation);
 
                 while not(I = Memo1.Lines.Count)do
                   begin
                     Writeln(FileNameManipulation,Memo1.Lines.Strings[I]);
-                    Inc(I);
-                end;
+                    Inc(I);//incrementa mais 1 na variavel I
+                end;//end loop
+
                 closeFile(FileNameManipulation);
                 ShowMessage('Arquivo Salvo Com Sucesso');
                 Button2.Enabled:=false;
-    end
-      else
-        ShowMessage('Informe Um Nome Para o Arquivo');
-     
 
+           end;//end if
 end;
 
 
