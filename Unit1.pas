@@ -43,7 +43,6 @@ begin
    if(OpenDialog1.Execute)then
     if(Trim(OpenDialog1.FileName) <> '')then
       begin
-        Button2.Enabled:= true;
         Edit1.Text:=OpenDialog1.FileName;
         AssignFile(FileNameSelectManipulation,OpenDialog1.FileName);
         Reset(FileNameSelectManipulation);
@@ -62,6 +61,9 @@ var
   I:Integer;
 begin
   I:=0;
+  if(Memo1.GetTextLen = 0)then
+    ShowMessage('Não Foi Possivel Salvar, O Documento Está Vazio!')
+    else
     If(SaveDialog1.Execute)Then
       If(Trim(SaveDialog1.FileName) <> '') Then
         begin
@@ -80,7 +82,6 @@ begin
 
                 closeFile(FileNameManipulation);
                 ShowMessage('Arquivo Salvo Com Sucesso');
-                Button2.Enabled:=false;
                 Memo1.Clear;
                 Edit1.Text:='Nenhum Arquivo Selecionado' ;
 

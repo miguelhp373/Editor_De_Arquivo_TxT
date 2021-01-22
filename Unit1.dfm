@@ -1,6 +1,6 @@
 object FramePrincipal: TFramePrincipal
-  Left = 794
-  Top = 163
+  Left = 250
+  Top = 178
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Editor de Texto'
@@ -2914,7 +2914,6 @@ object FramePrincipal: TFramePrincipal
       Width = 75
       Height = 25
       Caption = 'Salvar'
-      Enabled = False
       TabOrder = 2
       OnClick = Button2Click
     end
@@ -2931,7 +2930,7 @@ object FramePrincipal: TFramePrincipal
   end
   object SaveDialog1: TSaveDialog
     Filter = 'Arquivos de texto (*.txt)|*.txt'
-    Title = 'Salvar Como'
+    Title = 'Salvar Arquivo Como'
     Left = 576
     Top = 168
   end
